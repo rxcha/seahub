@@ -27,6 +27,7 @@
 {% endblock %}
 
 {% block extra_script %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/watermark.js"></script>
 {% include "snippets/file_view_js.html" %}
 <script type="text/javascript">
 $(function() {
@@ -39,5 +40,6 @@ $(function() {
 {% endif %}
 
 {% include "snippets/file_content_js.html" %}
+{% include "snippets/add_watermark.html" %}
 </script>
 {% endblock %}

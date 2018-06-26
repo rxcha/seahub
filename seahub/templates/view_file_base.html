@@ -166,6 +166,7 @@
 <script type="text/javascript" src="{% static "scripts/lib/underscore.js" %}"></script>
 <script type="text/javascript" src="{% static "scripts/lib/moment-with-locales.min.js" %}"></script>
 <script type="text/javascript" src="{% static "scripts/lib/marked.min.js" %}"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/watermark.js"></script>
 {% if highlight_keyword %}
 <script type="text/javascript" src="{{ MEDIA_URL }}js/findAndReplaceDOMText.js"></script>
 {% endif %}
@@ -574,5 +575,8 @@ $(document).on('keydown', function(e) {
 // for 'go back'
 var $history = $('#history');
 $history.attr('href', $history.attr('href') + '&referer=' + encodeURIComponent(location.href));
+
+// add watermark
+{% include "snippets/add_watermark.html" %}
 </script>
 {% endblock %}
